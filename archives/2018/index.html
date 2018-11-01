@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
 <meta property="og:site_name" content="YiJun">
 <meta property="og:description" content="Achievements are reached by hard work rather than recreation. Actions are done after thorough consideration rather than casual decision.">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="YiJun">
 <meta name="twitter:description" content="Achievements are reached by hard work rather than recreation. Actions are done after thorough consideration rather than casual decision.">
@@ -104,7 +104,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -124,7 +124,7 @@
 
 
 
-  <title>Archive | YiJun</title>
+  <title>归档 | YiJun</title>
   
 
 
@@ -136,7 +136,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            Home
+            首页
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -230,7 +230,7 @@
         
           
         
-        Um..! 2 posts in total. Keep on posting.
+        嗯..! 目前共计 2 篇日志。 继续努力。
       </span>
 
       
@@ -362,7 +362,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -412,7 +412,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -420,7 +420,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -569,10 +569,16 @@
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script src="/js/src/Valine.min.js"></script>  //���ø����صı����ļ��Լ��ټ����ٶ�
+
+    //�����Ϊ�ӱ��ؼ���
   
+  <script src="/js/src/Valine.min.js"></script>
+
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
@@ -584,9 +590,15 @@
         appKey: 'TiHk08mJDSOjE8SOmlfVMlI5',
         placeholder: 'Just go go',
         avatar:'mm',
-        guest_info:guest,
+        guest_info: ['nick'] ,
         pageSize:'10' || 10,
     });
+        var infoEle = document.querySelector('#comments .info');
+        if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+        infoEle.childNodes.forEach(function(item) {
+            item.parentNode.removeChild(item);
+        });
+    }
   </script>
 
 
